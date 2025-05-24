@@ -7,14 +7,18 @@
  * 4. Tratar erro para entrada inválida
  */
 export function converteNumeroParaMensagem(numero) {
+
   // Validação do tipo de entrada, exemplo:
-  // if (typeof numero !== "number") {
-  //   return "Por favor, forneça um número válido";
-  // }
+  if (typeof numero !== "number") {
+    return "Por favor, forneça um número válido";
+  }
 
   // Converta número para string
+ 
+  const numeroString = numero.toString()
+  console.log(numeroString)
   
   // Usando template string para formatar a mensagem
   // exemplo: "O número 42 convertido para texto é '42'"
-  return ``;
+  return `O número ${numero} convertido para texto é "${numeroString}"`;
 }

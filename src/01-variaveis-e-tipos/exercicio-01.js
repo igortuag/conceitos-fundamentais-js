@@ -5,5 +5,8 @@
  * 2. Garantir que o retorno é do tipo string
  */
 export function saudacao() {
-  return "";
+
+  const saudar = "Olá, mundo"
+  return saudar
 }
+
