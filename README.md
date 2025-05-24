@@ -1,10 +1,10 @@
 # Conceitos Fundamentais JavaScript
 
-Este projeto contém exercícios práticos para aprender e praticar conceitos fundamentais de JavaScript.
+Uma coleção de exercícios práticos para aprender JavaScript do básico ao avançado.
 
 ## 🎯 Objetivo
 
-Ajudar desenvolvedores a entender conceitos básicos de JavaScript através de exercícios práticos com testes automatizados.
+Ajudar desenvolvedores a dominar JavaScript através de exercícios práticos com testes automatizados.
 
 ## 📋 Pré-requisitos
 
@@ -24,55 +24,78 @@ cd conceitos-fundamentais-js
 npm install
 ```
 
-## 📝 Estrutura dos exercícios
+## 📚 Módulos
 
-Cada exercício está em um arquivo separado na pasta `src/01-variaveis-e-tipos/`:
+### 1. Variáveis e Tipos
+- Ex01: Saudação básica
+- Ex02: Conversão de números
+- Ex03: Formatação de data
+- Ex04: Análise de tipos
+- Ex05: Conversão de moedas
+- Ex06: Cálculo de área
 
-- `exercicio-01.js`: Criação de uma saudação básica
-- `exercicio-02.js`: Conversão de número para mensagem
-- `exercicio-03.js`: Formatação de data
-- `exercicio-04.js`: Análise de tipos de dados
-- `exercicio-05.js`: Conversão de moedas
-- `exercicio-06.js`: Cálculo de área 
+### 2. Operadores e Lógica
+- Ex01: Verificação de votação
+- Ex02: Cálculo de desconto
+- Ex03: Sistema de notas
+- Ex04: Calculadora de passagens
+- Ex05: Verificador de ano bissexto
+- Ex06: Calculadora de aumento salarial
+- Ex07: Analisador de triângulos
+
+### 3. Estruturas de Controle
+- Ex01: Encontrar números pares
+- Ex02: Soma de ímpares
+- Ex03: Verificador de números primos
+- Ex04: Verificador de palíndromos
 
 ## ✅ Como resolver os exercícios
 
-1. Leia os comentários TODO no início de cada arquivo de exercício
-2. Implemente a solução seguindo as instruções
-3. Execute os testes para verificar sua solução
+1. Cada exercício está em seu próprio arquivo
+2. Leia os comentários TODO/Regras no início do arquivo
+3. Implemente a solução seguindo as instruções
+4. Execute os testes para verificar
 
 ## 🧪 Rodando os testes
 
-Para rodar todos os testes uma vez:
+Para todos os testes:
 ```bash
 npm test
 ```
 
-Para rodar os testes em modo watch (atualiza ao salvar):
+Modo watch (atualiza ao salvar):
 ```bash
 npm run test:watch
 ```
 
-Para testar um exercício específico:
+Para um exercício específico:
 ```bash
 npm test exercicio-01
 ```
 
 ## 💡 Dicas
 
-- Leia atentamente os testes em `test.spec.js` para entender o comportamento esperado
-- Use `console.log()` para debugar seus exercícios
-- Consulte a documentação do [Jest](https://jestjs.io/) para entender melhor os testes
+- Leia os testes para entender o comportamento esperado
+- Use `console.log()` para debug
+- Comece pelos exercícios mais simples
+- Tente resolver sozinho antes de ver a solução
 
-## 📚 Conceitos abordados
-
-- Variáveis e tipos de dados
-- Funções e parâmetros
-- Strings e template literals
-- Números e operações matemáticas
-- Arrays e objetos básicos
-- Validações e tratamento de erros
+## 📝 Estrutura do Projeto
+```
+conceitos-fundamentais-js/
+├── src/
+│   ├── 01-variaveis-e-tipos/
+│   ├── 02-operadores-logica/
+│   ├── 03-funcoes/
+│   └── 04-estruturas-controle/
+├── package.json
+└── README.md
+```
 
 ## 🤝 Contribuindo
 
-Sinta-se à vontade para abrir issues ou enviar pull requests com melhorias.
+1. Faça um fork do projeto
+2. Crie sua branch de feature (`git checkout -b feature/NovoExercicio`)
+3. Commit suas mudanças (`git commit -m 'Adiciona novo exercício'`)
+4. Push para a branch (`git push origin feature/NovoExercicio`)
+5. Abra um Pull Request
