@@ -11,7 +11,7 @@
  */
 export function trocarValores(a, b) {
   return {
-    valorA: a,
-    valorB: b
+    valorA: b,
+    valorB: a,
   };
 }
