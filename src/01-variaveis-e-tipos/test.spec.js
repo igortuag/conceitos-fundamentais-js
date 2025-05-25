@@ -180,6 +180,7 @@ describe("Exercício 09: Troca de Valores", () => {
   });
 
   test("Deve trocar valores de tipos diferentes", () => {
+    const resultado = trocarValores(42, "teste");
     expect(resultado).toEqual({ valorA: "teste", valorB: 42 });
   });
 });
