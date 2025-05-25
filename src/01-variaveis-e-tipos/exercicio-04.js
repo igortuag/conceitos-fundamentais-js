@@ -12,8 +12,6 @@ export function analisarValor(valor) {
 
   const tipo = typeof valor;
 
-  console.log("tipo ::>", tipo);
-
   const ehNumero = tipo === "number";
   const ehVazio = !valor;
   const ehTexto = tipo === "string";
