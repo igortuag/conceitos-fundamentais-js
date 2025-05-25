@@ -9,14 +9,22 @@
  */
 export function converterRealParaDolar(reais, cotacaoDolar = 5.0) {
   // verifique o tipo, exemplo:
-  // if (typeof reais !== "number" || typeof cotacaoDolar !== "number") {
-  //   return "Por favor, forneça valores numéricos";
-  // }
+  if (typeof reais !== "number" || typeof cotacaoDolar !== "number") {
+    return "Por favor, forneça valores numéricos";
+  }
 
   // adicione um if para validar se os valores são positivos
+  if (reais < 0 || cotacaoDolar < 0) {
+    return "Os valores precisam ser positivos";
+  }
 
   // obtemos o valor em dólares
+  // se real for 100 e a cotação do dolar é de 5, então a conversao será 100*5 = 500 dolares
+
+  const valorEmDolar = reais / cotacaoDolar;
 
   // retorna a mensagem formatada exemplo: "Com R$ 100.00 você pode comprar US$ 20.00"
-  return "";
+  return `Com R$ ${reais.toFixed(
+    2
+  )} você pode comprar US$ ${valorEmDolar.toFixed(2)}`;
 }

@@ -91,7 +91,7 @@ describe("Exercicio 04: Teste da função analisarValor", () => {
   });
 });
 
-describe("Exercicio 06: Teste da função converterRealParaDolar", () => {
+describe("Exercicio 05: Teste da função converterRealParaDolar", () => {
   test("Deve converter reais para dólares corretamente", () => {
     const resultado = converterRealParaDolar(100, 5);
     expect(resultado).toBe("Com R$ 100.00 você pode comprar US$ 20.00");
