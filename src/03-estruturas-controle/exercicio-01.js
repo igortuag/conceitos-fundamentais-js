@@ -16,7 +16,7 @@ export function encontrarPares(inicio, fim) {
   // Validação de intervalo
   // Verique se o fim é maior que o início, caso contrário retorne um erro  throw new Error("O início deve ser menor que o fim");
 
-  // Usando alguma estrutura de repetição, crie um array com os números pares no intervalo
+  // Usando white crie um array para armazenar os números pares
 
   return [];
 }

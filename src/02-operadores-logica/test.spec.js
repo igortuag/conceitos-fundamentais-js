@@ -5,6 +5,7 @@ import { calcularPrecoPassagem } from './exercicio-04';
 import { verificarAnoBissexto } from './exercicio-05';
 import { calcularAumentoSalario } from './exercicio-06';
 import { analisarTriangulo } from './exercicio-07';
+import { analisarNumeros } from './exercicio-08';
 
 describe('Exercício 01: Verificação de elegibilidade para votação', () => {
   test('Deve identificar voto obrigatório', () => {
@@ -155,5 +156,32 @@ describe('Exercício 07: Analisador de Triângulos', () => {
 
   test('Deve validar tipo de entrada', () => {
     expect(analisarTriangulo('1', 2, 2)).toBe('Por favor, forneça medidas válidas');
+  });
+});
+
+describe('Exercício 08: Comparador de Números', () => {
+  test('Deve identificar maior e menor número', () => {
+    const resultado = analisarNumeros(10, 5, 8);
+    expect(resultado.maior).toBe(10);
+    expect(resultado.menor).toBe(5);
+  });
+
+  test('Deve calcular média corretamente', () => {
+    const resultado = analisarNumeros(10, 5, 6);
+    expect(resultado.media).toBe('7.00');
+  });
+
+  test('Deve identificar números iguais', () => {
+    const resultado = analisarNumeros(5, 5, 10);
+    expect(resultado.temNumerosIguais).toBe(true);
+  });
+
+  test('Deve identificar quando não há números iguais', () => {
+    const resultado = analisarNumeros(5, 6, 7);
+    expect(resultado.temNumerosIguais).toBe(false);
+  });
+
+  test('Deve rejeitar entradas não numéricas', () => {
+    expect(() => analisarNumeros('5', 6, 7)).toThrow('Por favor, forneça apenas números');
   });
 });

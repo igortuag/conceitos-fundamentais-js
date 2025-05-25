@@ -15,7 +15,7 @@ export function somarImpares(inicio, fim) {
 
   // Verifique se o fim é maior que o início, caso contrário retorne um erro throw new Error("O início deve ser menor que o fim");
 
-  // Usando alguma estrutura de repetição, crie um array com os números ímpares no intervalo
+  // Usando while, crie um array para armazenar os números ímpares e uma variável para a soma
 
   return {
     numerosImpares: [],

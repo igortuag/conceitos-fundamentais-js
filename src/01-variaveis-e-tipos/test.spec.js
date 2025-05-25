@@ -4,6 +4,9 @@ import { formatarDataNascimento } from "./exercicio-03";
 import { analisarValor } from "./exercicio-04";
 import { converterRealParaDolar } from "./exercicio-05";
 import { calcularArea } from "./exercicio-06";
+import { formatarNomeCompleto } from "./exercicio-07";
+import { converterTemperatura } from "./exercicio-08";
+import { trocarValores } from "./exercicio-09";
 
 describe("Exercicio 01", () => {
   test('Deve retornar "Olá, mundo"', () => {
@@ -123,5 +126,55 @@ describe("Exercicio 06: calculo de área", () => {
 
     const area4 = calcularArea(3, 0);
     expect(area4).toBe(0);
+  });
+});
+
+describe("Exercício 07: Formatador de Nome Completo", () => {
+  test("Deve formatar nome corretamente", () => {
+    expect(formatarNomeCompleto("joao", "silva")).toBe("Joao Silva");
+    expect(formatarNomeCompleto("MARIA", "SANTOS")).toBe("Maria Santos");
+  });
+
+  test("Deve validar entrada", () => {
+    expect(formatarNomeCompleto(123, "silva")).toBe(
+      "Por favor, forneça strings válidas"
+    );
+  });
+});
+
+describe("Exercício 08: Conversor de Temperatura", () => {
+  test("Deve converter Celsius para Fahrenheit", () => {
+    expect(converterTemperatura(0, "C")).toBe("0°C = 32.0°F");
+    expect(converterTemperatura(100, "C")).toBe("100°C = 212.0°F");
+  });
+
+  test("Deve converter Fahrenheit para Celsius", () => {
+    expect(converterTemperatura(32, "F")).toBe("32°F = 0.0°C");
+    expect(converterTemperatura(212, "F")).toBe("212°F = 100.0°C");
+  });
+
+  test("Deve validar entrada", () => {
+    expect(converterTemperatura("32", "F")).toBe(
+      "Por favor, forneça um número válido"
+    );
+    expect(converterTemperatura(32, "X")).toBe(
+      'Por favor, use "C" ou "F" como unidade'
+    );
+  });
+});
+
+describe("Exercício 09: Troca de Valores", () => {
+  test("Deve trocar valores numéricos", () => {
+    const resultado = trocarValores(5, 10);
+    expect(resultado).toEqual({ valorA: 10, valorB: 5 });
+  });
+
+  test("Deve trocar strings", () => {
+    const resultado = trocarValores("hello", "world");
+    expect(resultado).toEqual({ valorA: "world", valorB: "hello" });
+  });
+
+  test("Deve trocar valores de tipos diferentes", () => {
+    expect(resultado).toEqual({ valorA: "teste", valorB: 42 });
   });
 });
