@@ -11,8 +11,12 @@ export function verificarElegibilidadeVoto(idade) {
   // Implementar aqui
 
   if (idade >= 16 && idade <= 17) {
-    return "O voto é opcional ";
+    return "Voto opcional";
   }
 
-  return "";
+  if (idade < 16) {
+    return "Não pode votar";
+  }
+
+  return "Voto obrigatório";
 }
