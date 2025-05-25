@@ -115,6 +115,11 @@ describe("Exercicio 05: Teste da função converterRealParaDolar", () => {
 
 describe("Exercicio 06: calculo de área", () => {
   test("Deve calcular área corretamente", () => {
+    expect(calcularArea("string qualquer", "string")).toBe(
+      "os valores devem ser somente números"
+    );
+    expect(calcularArea(-1, -1)).toBe("Os valores devem ser somente positivos");
+
     const area = calcularArea(4, 2);
     expect(area).toBe(8);
 
