@@ -5,7 +5,7 @@
  * - Não divisível por 100 OU
  * - Divisível por 400
  * @param {number} ano - Ano a ser verificado
- * @returns {string} Mensagem indicando se é bissexto ou não
+ * @returns {string} Mensagem indicando se é bissexto ou não eg. "2000 é um ano BISSEXTO" ou "2021 NÃO é um ano BISSEXTO", 
  */
 export function verificarAnoBissexto(ano) {
   return "";

@@ -5,10 +5,11 @@
  * - 5 <= Média < 7: Recuperação
  * - Média < 5: Reprovado
  * - Notas válidas: 0 a 10
- * @param {number[]} notas Array com as notas do aluno
- * @returns {string} Status do aluno
+ * @param {number} nota1 Primeira nota do aluno
+ * @param {number} nota2 Segunda nota do aluno
+ * @param {number} nota3 Terceira nota do aluno
+ * @returns {string} 'Por favor, forneça notas válidas', 'As notas devem estar entre 0 e 10', 'Aprovado', 'Recuperação' ou 'Reprovado'
  */
-export function avaliarSituacaoAluno(notas) {
-  // Implementar aqui
-  return "";
+export function avaliarSituacaoAluno(nota1, nota2, nota3) {
+  // Implementação da função
 }

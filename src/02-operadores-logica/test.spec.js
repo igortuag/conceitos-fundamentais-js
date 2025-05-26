@@ -6,6 +6,7 @@ import { verificarAnoBissexto } from './exercicio-05';
 import { calcularAumentoSalario } from './exercicio-06';
 import { analisarTriangulo } from './exercicio-07';
 import { analisarNumeros } from './exercicio-08';
+import { determinarTreino } from './exercicio-09';
 
 describe('Exercício 01: Verificação de elegibilidade para votação', () => {
   test('Deve identificar voto obrigatório', () => {
@@ -44,23 +45,27 @@ describe('Exercício 02: Cálculo de desconto', () => {
 
 describe('Exercício 03: Sistema de notas', () => {
   test('Deve identificar aluno aprovado', () => {
-    expect(avaliarSituacaoAluno([7, 8, 9])).toBe('Aprovado');
-    expect(avaliarSituacaoAluno([10, 10, 10])).toBe('Aprovado');
+    expect(avaliarSituacaoAluno(7, 8, 9)).toBe('Aprovado');
+    expect(avaliarSituacaoAluno(10, 10, 10)).toBe('Aprovado');
   });
 
   test('Deve identificar aluno em recuperação', () => {
-    expect(avaliarSituacaoAluno([5, 5, 5])).toBe('Recuperação');
-    expect(avaliarSituacaoAluno([7, 5, 6])).toBe('Recuperação');
+    expect(avaliarSituacaoAluno(5, 5, 5)).toBe('Recuperação');
+    expect(avaliarSituacaoAluno(7, 5, 6)).toBe('Recuperação');
   });
 
   test('Deve identificar aluno reprovado', () => {
-    expect(avaliarSituacaoAluno([4, 4, 4])).toBe('Reprovado');
-    expect(avaliarSituacaoAluno([3, 2, 1])).toBe('Reprovado');
+    expect(avaliarSituacaoAluno(4, 4, 4)).toBe('Reprovado');
+    expect(avaliarSituacaoAluno(3, 2, 1)).toBe('Reprovado');
   });
 
   test('Deve rejeitar notas inválidas', () => {
-    expect(avaliarSituacaoAluno([11, 7, 8])).toBe('Notas inválidas');
-    expect(avaliarSituacaoAluno([-1, 5, 7])).toBe('Notas inválidas');
+    expect(avaliarSituacaoAluno(11, 7, 8)).toBe('As notas devem estar entre 0 e 10');
+    expect(avaliarSituacaoAluno(-1, 5, 7)).toBe('As notas devem estar entre 0 e 10');
+  });
+
+  test('Deve validar tipo de entrada', () => {
+    expect(avaliarSituacaoAluno('7', 8, 9)).toBe('Por favor, forneça notas válidas');
   });
 });
 
@@ -183,5 +188,30 @@ describe('Exercício 08: Comparador de Números', () => {
 
   test('Deve rejeitar entradas não numéricas', () => {
     expect(() => analisarNumeros('5', 6, 7)).toThrow('Por favor, forneça apenas números');
+  });
+});
+
+describe('Exercício 09: Rotina de Academia', () => {
+  test('Deve retornar treino para segunda e sexta', () => {
+    expect(determinarTreino('segunda')).toBe('triceps e costa');
+    expect(determinarTreino('sexta')).toBe('triceps e costa');
+  });
+
+  test('Deve retornar descanso para terça', () => {
+    expect(determinarTreino('terça')).toBe('descanso');
+  });
+
+  test('Deve retornar treino para quarta e sábado', () => {
+    expect(determinarTreino('quarta')).toBe('biceps, peito e ombro');
+    expect(determinarTreino('sabado')).toBe('biceps, peito e ombro');
+  });
+
+  test('Deve retornar treino para quinta e domingo', () => {
+    expect(determinarTreino('quinta')).toBe('perna');
+    expect(determinarTreino('domingo')).toBe('perna');
+  });
+
+  test('Deve validar entrada inválida', () => {
+    expect(determinarTreino('invalid')).toBe('Dia inválido');
   });
 });
