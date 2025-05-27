@@ -209,7 +209,7 @@ describe("Exercício 08: Comparador de Números", () => {
   });
 
   test("Deve rejeitar entradas não numéricas", () => {
-    expect(() => analisarNumeros("5", 6, 7)).toThrow(
+    expect(analisarNumeros("5", 6, 7)).toBe(
       "Por favor, forneça apenas números"
     );
   });
