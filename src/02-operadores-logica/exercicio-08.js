@@ -61,4 +61,4 @@ export function analisarNumeros(n1, n2, n3) {
   };
 }
 
-console.log("analisar>>>", analisarNumeros(10, 5, 8));
+// console.log("analisar>>>", analisarNumeros(10, 5, 8));

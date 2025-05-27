@@ -30,4 +30,4 @@ export function calcularAumentoSalario(salario) {
   ).toFixed(2)} `;
 }
 
-console.log(calcularAumentoSalario(1000));
+// console.log(calcularAumentoSalario(1000));
