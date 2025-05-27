@@ -5,7 +5,7 @@
  * - terça: descanso
  * - quarta e sabado: biceps, peito e ombro
  * - quinta e domingo: perna
- * 
+ *
  * @param {string} dia - Dia da semana (segunda, terça, quarta, quinta, sexta, sabado, domingo)
  * @returns {string} Possíveis retornos:
  * - "triceps e costa" (para segunda e sexta)
@@ -16,4 +16,21 @@
  */
 export function determinarTreino(dia) {
   // Implementar aqui
+  if (dia === "segunda" || dia === "sexta") {
+    return "triceps e costa";
+  }
+
+  if (dia === "terça") {
+    return "descanso";
+  }
+
+  if (dia === "quarta" || dia === "sabado") {
+    return "biceps, peito e ombro";
+  }
+
+  if (dia === "quinta" || dia === "domingo") {
+    return "perna";
+  }
+
+  return "Dia inválido";
 }
