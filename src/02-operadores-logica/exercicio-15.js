@@ -17,7 +17,7 @@ export function podeDigirir(idade) {
     return "Por favor, forneça uma idade válida";
   }
   if (idade < 0) {
-    return "A idade deve ser maior que zero";
+    return "Por favor, forneça uma idade válida";
   }
 
   if (idade < 18) {
