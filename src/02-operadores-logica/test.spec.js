@@ -7,6 +7,12 @@ import { calcularAumentoSalario } from "./exercicio-06";
 import { analisarTriangulo } from "./exercicio-07";
 import { analisarNumeros } from "./exercicio-08";
 import { determinarTreino } from "./exercicio-09";
+import { verificarParOuImpar } from './exercicio-10';
+import { calcularPrecoMacas } from './exercicio-11';
+import { calcularIMC } from './exercicio-12';
+import { encontrarMaior } from './exercicio-13';
+import { encontrarMenor } from './exercicio-14';
+import { podeDigirir } from './exercicio-15';
 
 describe("Exercício 01: Verificação de elegibilidade para votação", () => {
   test("Deve identificar voto obrigatório", () => {
@@ -237,5 +243,122 @@ describe("Exercício 09: Rotina de Academia", () => {
 
   test("Deve validar entrada inválida", () => {
     expect(determinarTreino("invalid")).toBe("Dia inválido");
+  });
+});
+
+describe('Exercício 10: Verificador de Par ou Ímpar', () => {
+  test('Deve identificar números pares', () => {
+    expect(verificarParOuImpar(2)).toBe('Par');
+    expect(verificarParOuImpar(0)).toBe('Par');
+    expect(verificarParOuImpar(-4)).toBe('Par');
+  });
+
+  test('Deve identificar números ímpares', () => {
+    expect(verificarParOuImpar(3)).toBe('Ímpar');
+    expect(verificarParOuImpar(1)).toBe('Ímpar');
+    expect(verificarParOuImpar(-1)).toBe('Ímpar');
+  });
+
+  test('Deve validar entrada', () => {
+    expect(verificarParOuImpar('2')).toBe('Por favor, forneça um número válido');
+  });
+});
+
+describe('Exercício 11: Calculadora de Preço de Maçãs', () => {
+  test('Deve calcular preço para menos de 5 maçãs', () => {
+    expect(calcularPrecoMacas(1)).toBe('Total: R$ 0.50');
+    expect(calcularPrecoMacas(4)).toBe('Total: R$ 2.00');
+  });
+
+  test('Deve calcular preço para 5 ou mais maçãs', () => {
+    expect(calcularPrecoMacas(5)).toBe('Total: R$ 1.25');
+    expect(calcularPrecoMacas(10)).toBe('Total: R$ 2.50');
+  });
+
+  test('Deve validar quantidade negativa', () => {
+    expect(calcularPrecoMacas(-1)).toBe('Quantidade inválida');
+  });
+
+  test('Deve validar entrada', () => {
+    expect(calcularPrecoMacas('5')).toBe('Por favor, forneça um número válido');
+  });
+});
+
+describe('Exercício 12: Calculadora de IMC', () => {
+  test('Deve identificar abaixo do peso', () => {
+    expect(calcularIMC(50, 1.70)).toBe('Abaixo do peso');
+  });
+
+  test('Deve identificar peso normal', () => {
+    expect(calcularIMC(70, 1.75)).toBe('Peso normal');
+  });
+
+  test('Deve identificar acima do peso', () => {
+    expect(calcularIMC(85, 1.75)).toBe('Acima do peso');
+  });
+
+  test('Deve identificar obesidade', () => {
+    expect(calcularIMC(100, 1.75)).toBe('Obeso');
+  });
+
+  test('Deve validar valores negativos', () => {
+    expect(calcularIMC(-70, 1.75)).toBe('Peso e altura devem ser maiores que zero');
+    expect(calcularIMC(70, -1.75)).toBe('Peso e altura devem ser maiores que zero');
+  });
+
+  test('Deve validar entrada', () => {
+    expect(calcularIMC('70', 1.75)).toBe('Por favor, forneça valores válidos');
+  });
+});
+
+describe('Exercício 13: Encontrar o Maior Número', () => {
+  test('Deve encontrar o maior entre três números diferentes', () => {
+    expect(encontrarMaior(1, 2, 3)).toBe('O maior número é 3');
+    expect(encontrarMaior(5, 2, 1)).toBe('O maior número é 5');
+  });
+
+  test('Deve encontrar o maior com números iguais', () => {
+    expect(encontrarMaior(5, 5, 5)).toBe('O maior número é 5');
+    expect(encontrarMaior(5, 5, 1)).toBe('O maior número é 5');
+  });
+
+  test('Deve validar entrada', () => {
+    expect(encontrarMaior('5', 2, 3)).toBe('Por favor, forneça números válidos');
+  });
+});
+
+describe('Exercício 14: Encontrar o Menor Número', () => {
+  test('Deve encontrar o menor entre três números diferentes', () => {
+    expect(encontrarMenor(1, 2, 3)).toBe('O menor número é 1');
+    expect(encontrarMenor(5, 2, 1)).toBe('O menor número é 1');
+  });
+
+  test('Deve encontrar o menor com números iguais', () => {
+    expect(encontrarMenor(5, 5, 5)).toBe('O menor número é 5');
+    expect(encontrarMenor(5, 5, 6)).toBe('O menor número é 5');
+  });
+
+  test('Deve validar entrada', () => {
+    expect(encontrarMenor('5', 2, 3)).toBe('Por favor, forneça números válidos');
+  });
+});
+
+describe('Exercício 15: Verificador de Idade para Dirigir', () => {
+  test('Deve permitir dirigir para maiores de idade', () => {
+    expect(podeDigirir(18)).toBe('Pode dirigir');
+    expect(podeDigirir(25)).toBe('Pode dirigir');
+  });
+
+  test('Deve negar permissão para menores de idade', () => {
+    expect(podeDigirir(16)).toBe('Não pode dirigir');
+    expect(podeDigirir(17)).toBe('Não pode dirigir');
+  });
+
+  test('Deve validar idade negativa', () => {
+    expect(podeDigirir(-18)).toBe('Por favor, forneça uma idade válida');
+  });
+
+  test('Deve validar entrada', () => {
+    expect(podeDigirir('18')).toBe('Por favor, forneça uma idade válida');
   });
 });
