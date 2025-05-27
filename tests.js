@@ -1,4 +1,6 @@
-import { converterTemperatura } from "./src/01-variaveis-e-tipos/exercicio-08.js";
+import { verificarAnoBissexto } from "./src/02-operadores-logica/exercicio-05.js";
 
-const temperatura1 = converterTemperatura(101, "C");
-console.log("temperatura1 ::>", temperatura1);
+console.log("2021 ::>", verificarAnoBissexto(2021));
+console.log("2000 ::>", verificarAnoBissexto(2000));
+console.log("2024 ::>", verificarAnoBissexto(2024));
+console.log("2500 ::>", verificarAnoBissexto(2500));
