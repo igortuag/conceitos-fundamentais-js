@@ -13,4 +13,15 @@
  */
 export function verificarParOuImpar(numero) {
   // Implementar aqui
+  if (typeof numero !== "number") {
+    return "Por favor, forneça um número válido";
+  }
+
+  if (numero % 2 === 0) {
+    return "Par";
+  }
+
+  return "Ímpar";
 }
+
+// console.log("verificarParOuImpar(numero)", verificarParOuImpar(2));
