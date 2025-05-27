@@ -17,4 +17,20 @@
  */
 export function calcularPrecoMacas(quantidade) {
   // Implementar aqui
+  if (typeof quantidade !== "number") {
+    return "Por favor, forneça um número válido";
+  }
+
+  if (quantidade < 0) {
+    return "Quantidade inválida";
+  }
+
+  if (quantidade <= 4) {
+    const total = (quantidade * 0.5).toFixed(2);
+    return `Total: R$ ${total}`;
+  }
+
+  const total = (quantidade * 0.25).toFixed(2);
+
+  return `Total: R$ ${total}`;
 }
