@@ -6,6 +6,8 @@ import { verificarVelocidade } from './exercicio-04';
 import { somarImpares } from './exercicio-02';
 import { verificarPrimo } from './exercicio-03';
 import { verificarPalindromo } from './exercicio-04';
+import { contarNumeros } from './exercicio-03';
+import { contarPalavras } from './exercicio-04';
 
 describe('Exercício 01: Encontrar Números Pares', () => {
   test('Deve encontrar pares no intervalo de 1 a 10', () => {
@@ -210,5 +212,51 @@ describe('Exercício 04: Verificador de Palíndromo', () => {
 
   test('Deve lançar erro para entrada não string', () => {
     expect(() => verificarPalindromo(123)).toThrow('Por favor, forneça uma string válida');
+  });
+});
+
+describe('Exercício 03: Contador de Números', () => {
+  test('Deve contar números corretamente', () => {
+    const resultado = contarNumeros([1, -2, 0, 3, -4]);
+    expect(resultado).toEqual({
+      positivos: 2,
+      negativos: 2,
+      zeros: 1
+    });
+  });
+
+  test('Deve tratar array só com positivos', () => {
+    const resultado = contarNumeros([1, 2, 3]);
+    expect(resultado).toEqual({
+      positivos: 3,
+      negativos: 0,
+      zeros: 0
+    });
+  });
+
+  test('Deve validar entrada', () => {
+    expect(contarNumeros(['1', 2])).toBe('Por favor, forneça apenas números');
+  });
+});
+
+describe('Exercício 04: Contador de Palavras', () => {
+  test('Deve contar palavras corretamente', () => {
+    const resultado = contarPalavras('hello world');
+    expect(resultado).toEqual({
+      palavras: 2,
+      frase: 'hello world'
+    });
+  });
+
+  test('Deve tratar espaços extras', () => {
+    const resultado = contarPalavras('   spaces   ');
+    expect(resultado).toEqual({
+      palavras: 1,
+      frase: 'spaces'
+    });
+  });
+
+  test('Deve validar entrada', () => {
+    expect(contarPalavras(123)).toBe('Por favor, forneça uma string válida');
   });
 });

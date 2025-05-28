@@ -1,34 +1,29 @@
 /**
- * Exercício 03: Verificador de Números Primos
- * Regras:
- * - Verificar se um número é primo
- * - Otimizar verificação até a raiz quadrada do número
- * - Validar entrada (número positivo)
- * - Retornar mensagem explicativa
+ * Exercício 03: Contador de Números
+ * Conta quantos números em um array são positivos, negativos e zeros
  * 
- * @param {number} numero - Número a ser verificado
- * @returns {Object} Objeto com resultado e explicação
+ * @param {number[]} numeros - Array de números para analisar 
+ * @returns {Object} Contagem de números positivos, negativos e zeros
+ * 
+ * @examples
+ * contarNumeros([1, -2, 0, 3, -4]) // { positivos: 2, negativos: 2, zeros: 1 }
+ * contarNumeros([1, 2, 3]) // { positivos: 3, negativos: 0, zeros: 0 }
+ * contarNumeros(['1', 2]) // "Por favor, forneça apenas números"
  */
-export function verificarPrimo(numero) {
-  const retornoNegativo = {
-    ehPrimo: false,
-    explicacao: `${numero} não é primo pois não é um número positivo`
+export function contarNumeros(numeros) {
+  const resultado = {
+    positivos: 0,
+    negativos: 0,
+    zeros: 0
   };
 
-  // verifique se o dado fornecido é um número, caso contrário retorne um erro
+  // verifique se o dado fornecido é um array, caso contrário retorne um erro
 
-  // Verique se o numero é igual a 1
-
-  // Verique se o numero é igual a 2 (unico numero primo par) primo
-
-  // Verifique se o número é par, se for não é primo
-
-
-  // Usando alguma estrutura de repetição, verifique se o número é divisível por algum número ímpar até a raiz quadrada do número
+  // Usando alguma estrutura de repetição, itere sobre o array e:
+    // - incremente o contador de positivos se o número for maior que zero
+    // - incremente o contador de negativos se o número for menor que zero
+    // - incremente o contador de zeros se o número for igual a zero
 
 
-  return {
-    ehPrimo: true,
-    explicacao: `${numero} é primo pois só é divisível por 1 e por ele mesmo`
-  };
+  return resultado;
 }
