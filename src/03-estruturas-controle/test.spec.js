@@ -8,6 +8,8 @@ import { verificarPrimo } from './exercicio-03';
 import { verificarPalindromo } from './exercicio-04';
 import { contarNumeros } from './exercicio-03';
 import { contarPalavras } from './exercicio-04';
+import { calcularMedia } from './exercicio-05';
+import { gerarTabuada } from './exercicio-06';
 
 describe('Exercício 01: Encontrar Números Pares', () => {
   test('Deve encontrar pares no intervalo de 1 a 10', () => {
@@ -258,5 +260,57 @@ describe('Exercício 04: Contador de Palavras', () => {
 
   test('Deve validar entrada', () => {
     expect(contarPalavras(123)).toBe('Por favor, forneça uma string válida');
+  });
+});
+
+describe('Exercício 05: Calculadora de Média e Status', () => {
+  test('Deve identificar aluno aprovado', () => {
+    const resultado = calcularMedia([7, 8, 9]);
+    expect(resultado).toEqual({
+      media: 8,
+      status: 'Aprovado'
+    });
+  });
+
+  test('Deve identificar aluno em recuperação', () => {
+    const resultado = calcularMedia([5, 5, 5]);
+    expect(resultado).toEqual({
+      media: 5,
+      status: 'Em Recuperação'
+    });
+  });
+
+  test('Deve identificar aluno reprovado', () => {
+    const resultado = calcularMedia([3, 4, 2]);
+    expect(resultado).toEqual({
+      media: 3,
+      status: 'Reprovado'
+    });
+  });
+
+  test('Deve validar entrada', () => {
+    expect(calcularMedia(['7', 8, 9])).toBe('Por favor, forneça apenas números válidos');
+  });
+});
+
+describe('Exercício 06: Tabuada', () => {
+  test('Deve gerar tabuada do 2', () => {
+    const resultado = gerarTabuada(2);
+    expect(resultado).toEqual({
+      numero: 2,
+      resultados: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    });
+  });
+
+  test('Deve gerar tabuada do 5', () => {
+    const resultado = gerarTabuada(5);
+    expect(resultado).toEqual({
+      numero: 5,
+      resultados: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+    });
+  });
+
+  test('Deve validar entrada', () => {
+    expect(gerarTabuada('2')).toBe('Por favor, forneça um número válido');
   });
 });
