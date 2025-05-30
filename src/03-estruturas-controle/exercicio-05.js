@@ -51,4 +51,4 @@ export function calcularMedia(notas) {
   };
 }
 
-console.log("calcularMedia([7, 8, 9])", calcularMedia([7, 8, 9]));
+// console.log("calcularMedia([7, 8, 9])", calcularMedia([7, 8, 9]));
